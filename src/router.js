@@ -2,6 +2,8 @@ import { createRouter, createWebHistory } from "vue-router";
 import HomePage from './pages/HomePage.vue';
 import AboutUs from './pages/AboutUs.vue';
 import AskUs from './pages/AskUs.vue';
+import NotFound from './pages/NotFound.vue';
+import PetsList from './pages/PetsList.vue';
 const router = createRouter({
     history: createWebHistory(),
     routes: [
@@ -9,6 +11,11 @@ const router = createRouter({
             path: '/',
             name: 'homepage',
             component: HomePage
+        },
+        {
+            path: '/pets-list',
+            name: 'pets_list',
+            component: PetsList
         },
         {
             path: '/about-us',

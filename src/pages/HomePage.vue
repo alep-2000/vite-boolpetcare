@@ -1,7 +1,7 @@
 <script>
 import axios from 'axios';
 import { store } from '../store.js';
-import AppLoading from '../components/AppLoading.vue'
+import AppLoading from '../components/AppLoading.vue';
 export default {
   components: {
     AppLoading,
