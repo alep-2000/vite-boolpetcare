@@ -1,5 +1,7 @@
 import { createRouter, createWebHistory } from "vue-router";
 import HomePage from './pages/HomePage.vue';
+import AboutUs from './pages/AboutUs.vue';
+import AskUs from './pages/AskUs.vue';
 const router = createRouter({
     history: createWebHistory(),
     routes: [
@@ -9,24 +11,14 @@ const router = createRouter({
             component: HomePage
         },
         {
-            path: '/projects',
-            name: 'projects',
-            component: ProjectList
-        },
-        {
-            path: '/projects-type',
-            name: 'projects_type',
-            component: ProjectTypeList
-        },
-        {
-            path: '/technology',
-            name: 'technology',
-            component: TechnologyList
-        },
-        {
             path: '/about-us',
             name: 'about_us',
             component: AboutUs
+        },
+        {
+            path: '/ask-us',
+            name: 'ask_us',
+            component: AskUs
         },
         {
             path: '/pagina-non-trovata',
