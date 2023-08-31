@@ -2,12 +2,12 @@
 
 import axios from 'axios';
 import { store } from '../store.js';
-import AppLoader from '../components/AppLoader.vue';
+import AppLoading from '../components/AppLoading.vue';
 
 export default {
     name: 'SinglePet',
     components: {
-        AppLoader
+        AppLoading
     },
     data() {
         return {
@@ -37,7 +37,7 @@ export default {
 
 <template lang="">
     <div>
-        <AppLoader v-if="store.loading" />
+        <AppLoading v-if="this.store.loading" />
         <div class="container" v-else>
             <div class="row">
                 <div class="col-12 text-center mb-4">
