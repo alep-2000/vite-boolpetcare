@@ -39,7 +39,9 @@ export default {
                             <div class="collapse navbar-collapse mx-5" id="navbarNavDropdown">
                                 <ul class="navbar-nav">
                                     <li class="nav-item" v-for="(item, index) in menuItems" :key="index">
-                                        <router-link class="nav-link">{{ item.label }}</router-link>
+                                        <router-link class="nav-link" :to="{ name: item.route_name }">
+                                            {{ item.label }}
+                                        </router-link>
                                     </li>
                                 </ul>
                             </div>
