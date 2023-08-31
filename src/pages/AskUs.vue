@@ -1,13 +1,11 @@
 <script>
 import axios from 'axios';
 import { store } from '../store.js'
-import AppLoading from '../components/AppLoading.vue';
+
 
 export default {
     name: 'AskUs',
-    components: {
-        AppLoading,
-    },
+
     data() {
         return {
             store,
@@ -22,24 +20,24 @@ export default {
 }
 </script>
 <template >
-    <AppLoading v-if="this.store.loading" />
-    <div class="container" v-else>
-        <div class="row">
+   
+    <div class="container">
+        <div class="row mt-5">
             <h1>Inviaci le tue domande :</h1>
             <form action="" method="POST">
                 <div class="class-group">
                     <label class="control-label">Nome</label>
-                    <input type="text" id="name" name="name" placeholder="Name">
+                    <input type="text" id="name" name="name" placeholder="Name" class="form-control">
                 </div>
-                <div class="class-group">
+                <div class="class-group my-3">
                     <label class="control-label">Cognome</label>
-                    <input type="text" id="surname" name="surname" placeholder="Surname">
+                    <input type="text" id="surname" name="surname" placeholder="Surname" class="form-control">
                 </div>
-                <div class="class-group">
+                <div class="class-group my-3">
                     <label class="control-label">Email</label>
                     <input type="email" class="form-control" placeholder="name@example.com">
                 </div>
-                <div class="class-group">
+                <div class="class-group my-3">
                     <label class="control-label">Domanda</label>
                     <textarea class="form-control" rows="3"></textarea>
                 </div>

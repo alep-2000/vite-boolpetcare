@@ -12,7 +12,7 @@ export default {
                     Lorem ipsum dolor sit amet consectetur adipisicing elit. Error sapiente veniam rem debitis, obcaecati sint optio! Tenetur expedita, perspiciatis dignissimos molestias quaerat enim commodi necessitatibus quas, aliquam dolorem voluptate excepturi?
                 </p>
                 <div class="mt-5">
-                    <router-link class="btn btn-primary" :to="{name: 'request' }">Inviaci le tue domande </router-link>
+                    <router-link class="btn btn-primary" :to="{name: 'ask_us' }">Inviaci le tue domande </router-link>
                 </div>
             </div>
 
