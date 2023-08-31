@@ -56,10 +56,13 @@ export default {
                     <p class="card-text">{{ turncateText(pet.notes) }}</p>
                     <p class="card-text"><small class="text-muted">{{ pet.date_born }}</small></p>
                 </div>
+                <div class="card-footer">
+                  <router-link class="btn btn-outline-primary w-100" :to="{ name: 'determinato_proggetto', params: { title: pet.name } }">Vedi Antoni Gisondi</router-link>
+                </div>
             </div>
           </div>
             </div>
-            <div class="row">
+            <div class="row mt-5">
                 <div class="col-12">
                     <div class="d-flex justify-content-center">
                         <nav>
