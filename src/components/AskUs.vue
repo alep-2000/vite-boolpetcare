@@ -24,7 +24,7 @@ export default {
 <template >
     <div class="container">
         <div class="row">
-
+            <h1>Inviaci le tue domande :</h1>
             <form action="" method="POST">
                         <div class="class-group">
                             <label class="control-label">Nome</label>
