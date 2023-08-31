@@ -8,20 +8,12 @@ export default {
                     route_name: 'homepage'
                 },
                 {
-                    label: 'Progetti',
-                    route_name: 'projects'
-                },
-                {
-                    label: 'Tipologie di progetti',
-                    route_name: 'projects_type'
-                },
-                {
-                    label: 'Tecnologie',
-                    route_name: 'technology'
-                },
-                {
                     label: 'Chi siamo',
                     route_name: 'about_us'
+                },
+                {
+                    label: 'Contatti',
+                    route_name: 'ask_us'
                 },
             ],
         }
