@@ -1,5 +1,8 @@
-@import "@fortawesome/fontawesome-free/scss/fontawesome.scss";
-@import "@fortawesome/fontawesome-free/scss/solid.scss";
-@import "@fortawesome/fontawesome-free/scss/brands.scss";
-@import "@fortawesome/fontawesome-free/scss/regular.scss";
-@import 'bootstrap/scss/bootstrap.scss';
+@import '/node_modules/@fortawesome/fontawesome-free/css/all.min.css';
+@import '/node_modules/bootstrap/scss/bootstrap.scss';
+
+.image {
+    img {
+        width: 7%;
+    }
+}
