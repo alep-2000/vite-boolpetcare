@@ -27,6 +27,15 @@ const router = createRouter({
             path: '/about-us',
             name: 'about_us',
             component: AboutUs
+        },
+        {
+            path: '/pagina-non-trovata',
+            name: 'not-found',
+            component: NotFound
+        },
+        {
+            path: '/:catchAll(.*)',
+            redirect: '/pagina-non-trovata'
         }
     ]
 });
