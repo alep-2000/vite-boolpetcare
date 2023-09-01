@@ -40,6 +40,10 @@ export default {
         <AppLoading v-if="this.store.loading" />
         <div class="container" v-else>
             <div class="row">
+                <div class="card-image-container">
+                    <img :src="`${this.store.baseUrl}/storage/${pet.image}`" class="card-img-top my-img" v-if="pet.image">
+                    <img src="https://picsum.photos/200/300" class="card-img-top my-img" v-else>
+                </div>
                 <div class="col-12 text-center mb-4">
                     <h1><strong>Nome:</strong> {{ pet.name }}</h1>
                 </div>
@@ -63,6 +67,19 @@ export default {
     </div>
 </template>
 
-<style lang="">
+<style lang="scss">
+     .card-image-container{
+    position: relative;
+    overflow: hidden;
+    padding-top: 56.25%;
     
+        .my-img{
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    }
 </style>

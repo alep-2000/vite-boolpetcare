@@ -48,21 +48,27 @@ export default {
         <div class="col-12">
           <h1 class="text-center my-5">BOOLPET</h1>
         </div>
-        <div class="col-12 col-md-4" v-for="pet in pets" :key="pet.id">
-          <div class="card-body">
-            <h5 class="card-title">{{ pet.name }}</h5>
-            <h5 class="card-title my-4">{{ pet.owner }}</h5>
-            <p class="card-text">{{ turncateText(pet.notes) }}</p>
-            <p class="card-text"><small class="text-muted">{{ pet.date_born }}</small></p>
+       
+        <div class="col-12 col-md-4 card p-3 my-3" v-for="pet in pets" :key="pet.id">
+            <div class="card-image-container">
+              <img :src="`${this.store.baseUrl}/storage/${pet.image}`" class="card-img-top my-img" v-if="pet.image">
+              <img src="https://picsum.photos/200/300" class="card-img-top my-img" v-else>
+            </div>
+            <div class="card-body">
+              <h5 class="card-title">{{ pet.name }}</h5>
+              <h5 class="card-title my-4">{{ pet.owner }}</h5>
+              <p class="card-text">{{ turncateText(pet.notes) }}</p>
+              <p class="card-text"><small class="text-muted">{{ pet.date_born }}</small></p>
+            </div>
+            <div class="card-footer my-3">
+              <router-link class="btn btn-outline-primary w-100" :to="{ name: 'single-pet', params: { slug: pet.slug } }">Vedi
+                l'animale</router-link>
+            </div>
           </div>
-          <div class="card-footer my-3">
-            <router-link class="btn btn-outline-primary w-100" :to="{ name: 'single-pet', params: { slug: pet.slug } }">Vedi
-              l'animale</router-link>
-          </div>
-        </div>
+        
       </div>
     </div>
-    <div class="row mt-5">
+    <div class="row my-5">
       <div class="col-12">
         <div class="d-flex justify-content-center">
           <nav>
