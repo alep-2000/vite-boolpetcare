@@ -2,6 +2,10 @@ import { createRouter, createWebHistory } from "vue-router";
 import HomePage from './pages/HomePage.vue';
 import AboutUs from './pages/AboutUs.vue';
 import AskUs from './pages/AskUs.vue';
+import NotFound from './pages/NotFound.vue';
+import PetsList from './pages/PetsList.vue';
+import SinglePet from './pages/SinglePet.vue';
+
 const router = createRouter({
     history: createWebHistory(),
     routes: [
@@ -9,6 +13,16 @@ const router = createRouter({
             path: '/',
             name: 'homepage',
             component: HomePage
+        },
+        {
+            path: '/pets',
+            name: 'pets-list',
+            component: PetsList
+        },
+        {
+            path: '/pet/:name',
+            name: 'single-pet',
+            component: SinglePet
         },
         {
             path: '/about-us',
