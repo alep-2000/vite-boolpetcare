@@ -44,59 +44,37 @@ export default {
     }
   },
   created() {
-<<<<<<< HEAD
-    this.getPets(1);
-  },
-  methods: {
-    getPets(num_page) {
-      this.store.loading = true;
-      axios.get(`${this.store.baseUrl}/api/pets`, { params: { page: num_page } }).then((response) => {
-        if (response.data.success) {
-          this.pets = response.data.results.data;
-          this.currentPage = response.data.results.current_page;
-          this.lastPage = response.data.results.last_page;
-          this.store.loading = false;
-        }
-      });
-    },
-    turncateText(text) {
-      if (text.length > this.maxCaracters) {
-        return text.substr(0, this.maxCaracters) + '...';
-      }
-      return text
-=======
     this.startAutoScroll();
   },
   methods: {
-    selectSlide(index){
-        this.movimento = index;
+    selectSlide(index) {
+      this.movimento = index;
     },
-    prevSlide(){
-        this.movimento--;
-        if(this.movimento < 0){
-            this.movimento = this.slides.length - 1;
-        }
+    prevSlide() {
+      this.movimento--;
+      if (this.movimento < 0) {
+        this.movimento = this.slides.length - 1;
+      }
     },
-    nextSlide(){
-        this.movimento++;
-        if(this.movimento > this.slides.length - 1){
-            this.movimento = 0;
-        }
+    nextSlide() {
+      this.movimento++;
+      if (this.movimento > this.slides.length - 1) {
+        this.movimento = 0;
+      }
     },
-    startAutoScroll(){
-        this.autoScroll = setInterval(() => {
-            this.nextSlide();
-        }, 3000);
+    startAutoScroll() {
+      this.autoScroll = setInterval(() => {
+        this.nextSlide();
+      }, 3000);
     },
-    stopAutoScroll(){
-        clearInterval(this.autoScroll);
->>>>>>> 87d5add56ef90c0026dc063f9add1da20872bff9
+    stopAutoScroll() {
+      clearInterval(this.autoScroll);
     }
   }
 }
 </script>
 <template>
-  <<<<<<< HEAD <AppLoading v-if="this.store.loading" />
+  <AppLoading v-if="this.store.loading" />
   <div v-else>
     <div class="container">
       <div class="row">
@@ -135,7 +113,6 @@ export default {
       </div>
     </div>
   </div>
-  =======
   <div class="container">
     <div class="slider-wrapper" @mouseover="stopAutoScroll" @mouseleave="startAutoScroll">
 
@@ -155,7 +132,6 @@ export default {
       </div>
     </div>
   </div>
-  >>>>>>> 87d5add56ef90c0026dc063f9add1da20872bff9
 </template>
 <style lang="scss">
 @use '../styles/generals.scss' as *;

@@ -25,7 +25,7 @@ export default {
             <form action="" method="POST">
                 <div class="class-group">
                     <label class="control-label">Nome</label>
-                    <<<<<<< HEAD <input type="text" id="name" name="name" placeholder="Name">
+                    <input type="text" id="name" name="name" placeholder="Name">
                 </div>
                 <div class="class-group">
                     <label class="control-label">Cognome</label>
@@ -36,7 +36,7 @@ export default {
                     <input type="email" class="form-control" placeholder="name@example.com">
                 </div>
                 <div class="class-group">
-                    =======
+
                     <input type="text" id="name" name="name" placeholder="Name" class="form-control">
                 </div>
                 <div class="class-group my-3">

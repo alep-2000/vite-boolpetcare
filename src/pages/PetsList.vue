@@ -84,42 +84,7 @@ export default {
       </div>
     </div>
   </div>
-  </div>
-  <div class="row">
-    <div class="col-12 col-md-4" v-for="pet in pets" :key="pet.id">
-      <div class="card-body">
-        <h5 class="card-title">{{ pet.name }}</h5>
-        <h5 class="card-title">{{ pet.owner }}</h5>
-        <p class="card-text">{{ turncateText(pet.notes) }}</p>
-        <p class="card-text"><small class="text-muted">{{ pet.date_born }}</small></p>
-      </div>
-      <div class="card-footer">
-        <router-link class="btn btn-outline-primary w-100" :to="{ name: 'single-pet', params: { name: pet.name } }">Pet
-        </router-link>
-      </div>
-    </div>
-  </div>
-  </div>
-  <div class="row mt-5">
-    <div class="col-12">
-      <div class="d-flex justify-content-center">
-        <nav>
-          <ul class="pagination">
-            <li :class="currentPage === 1 ? 'disabled' : ''">
-              <button class="page-link" @click="getPets(currentPage - 1)">Precedente</button>
-            </li>
-            <li :class="currentPage === lastPage ? 'disabled' : ''">
-              <button class="page-link" @click="getPets(currentPage + 1)">Successivo</button>
-            </li>
-          </ul>
-        </nav>
-      </div>
-      <div class="text-center mt-3">
-        Pagina {{ currentPage }} di {{ lastPage }}
-      </div>
-    </div>
-  </div>
-</div></template>
+</template>
 <style lang="">
   
 </style>
