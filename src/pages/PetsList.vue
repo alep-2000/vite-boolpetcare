@@ -12,7 +12,8 @@ export default {
       store,
       pets: [],
       currentPage: 1,
-      lastPage: null
+      lastPage: null,
+      maxCaracters: 30
     }
   },
   created(){
@@ -52,12 +53,12 @@ export default {
                 <div class="col-12 col-md-4" v-for="pet in pets" :key="pet.id">
                   <div class="card-body">
                     <h5 class="card-title">{{ pet.name }}</h5>
-                    <h5 class="card-title">{{ pet.owner }}</h5>
+                    <h5 class="card-title my-4">{{ pet.owner }}</h5>
                     <p class="card-text">{{ turncateText(pet.notes) }}</p>
                     <p class="card-text"><small class="text-muted">{{ pet.date_born }}</small></p>
                 </div>
-                <div class="card-footer">
-                  <router-link class="btn btn-outline-primary w-100" :to="{ name: 'determinato_proggetto', params: { title: pet.name } }">Vedi Antoni Gisondi</router-link>
+                <div class="card-footer my-3">
+                  <router-link class="btn btn-outline-primary w-100" :to="{ name: 'single-pet', params: { id: pet.id } }">Vedi l'animale</router-link>
                 </div>
             </div>
           </div>

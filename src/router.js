@@ -4,6 +4,8 @@ import AboutUs from './pages/AboutUs.vue';
 import AskUs from './pages/AskUs.vue';
 import NotFound from './pages/NotFound.vue';
 import PetsList from './pages/PetsList.vue';
+import PetSingle from './pages/SinglePet.vue';
+
 const router = createRouter({
     history: createWebHistory(),
     routes: [
@@ -16,6 +18,11 @@ const router = createRouter({
             path: '/pets-list',
             name: 'pets_list',
             component: PetsList
+        },
+        {
+            path: '/single-pet/:id',
+            name: 'single-pet',
+            component: PetSingle
         },
         {
             path: '/about-us',
