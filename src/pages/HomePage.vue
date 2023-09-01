@@ -83,7 +83,7 @@ export default {
                 <div class="thumbs">
                     <div class="prev" @click="prevSlide"></div>
                     <div class="next" @click="nextSlide"></div>
-                    <img :src="slide.image" v-for="(slide, index) in slides" class="thumb" :class="[movimento === index ? 'active' : '']" @click="selectSlide(index)">
+                    <img :src="slide.image" v-for="(slide, index) in slides" :key="index" class="thumb" :class="[movimento === index ? 'active' : '']" @click="selectSlide(index)">
                 </div>
             </div>
         </div>

@@ -21,7 +21,7 @@ const router = createRouter({
             component: PetsList
         },
         {
-            path: '/single-pet/:id',
+            path: '/single-pet/:slug',
             name: 'single-pet',
             component: PetSingle
         },

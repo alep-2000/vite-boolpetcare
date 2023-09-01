@@ -21,7 +21,7 @@ export default {
     methods: {
         getSinglePet() {
             this.store.loading = true;
-            axios.get(`${this.store.baseUrl}/api/pets/${this.$route.params.id}`).then((response) => {
+            axios.get(`${this.store.baseUrl}/api/pets/${this.$route.params.slug}`).then((response) => {
                 if (response.data.success) {
                     this.pet = response.data.pet;
                     this.store.loading = false;
@@ -43,8 +43,6 @@ export default {
                 <div class="col-12 text-center mb-4">
                     <h1><strong>Nome:</strong> {{ pet.name }}</h1>
                 </div>
-            </div>
-            <div class="row">
                 <div class="col-12">
                     <strong>Specie:</strong>{{ pet.species }}
                 </div>

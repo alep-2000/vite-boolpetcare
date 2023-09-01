@@ -48,8 +48,6 @@ export default {
         <div class="col-12">
           <h1 class="text-center my-5">BOOLPET</h1>
         </div>
-      </div>
-      <div class="row">
         <div class="col-12 col-md-4" v-for="pet in pets" :key="pet.id">
           <div class="card-body">
             <h5 class="card-title">{{ pet.name }}</h5>
@@ -58,7 +56,7 @@ export default {
             <p class="card-text"><small class="text-muted">{{ pet.date_born }}</small></p>
           </div>
           <div class="card-footer my-3">
-            <router-link class="btn btn-outline-primary w-100" :to="{ name: 'single-pet', params: { id: pet.id } }">Vedi
+            <router-link class="btn btn-outline-primary w-100" :to="{ name: 'single-pet', params: { slug: pet.slug } }">Vedi
               l'animale</router-link>
           </div>
         </div>
