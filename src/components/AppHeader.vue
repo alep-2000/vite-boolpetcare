@@ -8,6 +8,10 @@ export default {
                     route_name: 'homepage'
                 },
                 {
+                    label: 'I nostri animali',
+                    route_name: 'pets_list'
+                },
+                {
                     label: 'Chi siamo',
                     route_name: 'about_us'
                 },
