@@ -46,6 +46,7 @@ export default {
     }
 }
 </script>
+<<<<<<< HEAD
 <template>
     <div>
         <div class="container">
@@ -79,6 +80,46 @@ export default {
                     </form>
                 </div>
             </div>
+=======
+<template >
+    <div class="container">
+        <div class="row mt-5">
+            <h1>Inviaci le tue domande :</h1>
+            <form action="" method="POST">
+                <div class="class-group">
+                    <label class="control-label">Nome</label>
+                    <input type="text" id="name" name="name" placeholder="Name">
+                </div>
+                <div class="class-group">
+                    <label class="control-label">Cognome</label>
+                    <input type="text" id="surname" name="surname" placeholder="Surname">
+                </div>
+                <div class="class-group">
+                    <label class="control-label">Email</label>
+                    <input type="email" class="form-control" placeholder="name@example.com">
+                </div>
+                <div class="class-group">
+
+                    <input type="text" id="name" name="name" placeholder="Name" class="form-control">
+                </div>
+                <div class="class-group my-3">
+                    <label class="control-label">Cognome</label>
+                    <input type="text" id="surname" name="surname" placeholder="Surname" class="form-control">
+                </div>
+                <div class="class-group my-3">
+                    <label class="control-label">Email</label>
+                    <input type="email" class="form-control" placeholder="name@example.com">
+                </div>
+                <div class="class-group my-3">
+                    >>>>>>> 87d5add56ef90c0026dc063f9add1da20872bff9
+                    <label class="control-label">Domanda</label>
+                    <textarea class="form-control" rows="3"></textarea>
+                </div>
+                <div class="class-group my-3">
+                    <button type="submit" class="btn btn-primary btn-success">Invia</button>
+                </div>
+            </form>
+>>>>>>> 42b210e11bb9d2d36cd64dd1df8b0998de3615c0
         </div>
     </div>
 </template>
