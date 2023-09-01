@@ -1,10 +1,5 @@
 <script>
-import axios from 'axios';
-import AppLoading from '../components/AppLoading.vue';
 export default {
-  components: {
-    AppLoading,
-  },
   data() {
     return {
       slides: [
@@ -74,64 +69,24 @@ export default {
 }
 </script>
 <template>
-  <AppLoading v-if="this.store.loading" />
-  <div v-else>
     <div class="container">
-      <div class="row">
-        <div class="col-12">
-          <h1 class="text-center my-5">BOOLPET</h1>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-12 col-md-4" v-for="pet in pets" :key="pet.id">
-          <div class="card-body">
-            <h5 class="card-title">{{ pet.name }}</h5>
-            <h5 class="card-title">{{ pet.owner }}</h5>
-            <p class="card-text">{{ turncateText(pet.notes) }}</p>
-            <p class="card-text"><small class="text-muted">{{ pet.date_born }}</small></p>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="row">
-      <div class="col-12">
-        <div class="d-flex justify-content-center">
-          <nav>
-            <ul class="pagination">
-              <li :class="currentPage === 1 ? 'disabled' : ''">
-                <button class="page-link" @click="getPets(currentPage - 1)">Precedente</button>
-              </li>
-              <li :class="currentPage === lastPage ? 'disabled' : ''">
-                <button class="page-link" @click="getPets(currentPage + 1)">Successivo</button>
-              </li>
-            </ul>
-          </nav>
-        </div>
-        <div class="text-center mt-3">
-          Pagina {{ currentPage }} di {{ lastPage }}
-        </div>
-      </div>
-    </div>
-  </div>
-  <div class="container">
-    <div class="slider-wrapper" @mouseover="stopAutoScroll" @mouseleave="startAutoScroll">
+            <div class="slider-wrapper" @mouseover = "stopAutoScroll" @mouseleave = "startAutoScroll">
 
-      <div class="item">
-        <img :src="slides[movimento].image">
-        <div class="overlay">
-          <h2>{{ slides[movimento].title }}</h2>
-          <p>{{ slides[movimento].text }}</p>
-        </div>
-      </div>
+                <div class="item">
+                    <img :src="slides[movimento].image">
+                    <div class="overlay">
+                        <h2>{{ slides[movimento].title }}</h2>
+                        <p>{{ slides[movimento].text }}</p>
+                    </div>
+                </div>
 
-      <div class="thumbs">
-        <div class="prev" @click="prevSlide"></div>
-        <div class="next" @click="nextSlide"></div>
-        <img :src="slide.image" v-for="(slide, index) in slides" :key="index" class="thumb"
-          :class="[movimento === index ? 'active' : '']" @click="selectSlide(index)">
-      </div>
-    </div>
-  </div>
+                <div class="thumbs">
+                    <div class="prev" @click="prevSlide"></div>
+                    <div class="next" @click="nextSlide"></div>
+                    <img :src="slide.image" v-for="(slide, index) in slides" class="thumb" :class="[movimento === index ? 'active' : '']" @click="selectSlide(index)">
+                </div>
+            </div>
+        </div>
 </template>
 <style lang="scss">
 @use '../styles/generals.scss' as *;
