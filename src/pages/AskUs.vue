@@ -49,39 +49,47 @@ export default {
 </script>
 <template>
     <div>
-        <h1 class="text-center my-5">Contattaci</h1>
+        <h1 class="text-center my-3">Contattaci</h1>
         <div class="container">
+            <div class="col-12 text-center">
+                <lord-icon
+                    src="https://cdn.lordicon.com/ganitnqp.json"
+                    trigger="loop"
+                    colors="primary:#4be1ec,secondary:#cb5eee"
+                    style="width:150px;height:150px">
+                </lord-icon>
+            </div>
             <div class="row">
                 <div class="col-12 card p-5">
                     <form @submit.prevent="sendForm()" class="row">
-                        <div class="col-12 col-md-6">
+                        <div class="col-12 col-md-6 my-3">
                             <label class="control-label" for="name">Nome e cognome</label>
                             <input type="text" name="name" id="name" v-model="name" placeholder="Nome" class="form-control" :class="errors.name ? 'is-invalid' : ''">
                             <p v-for="(error, index) in errors.name" :key="index" class="text-danger">
                                 {{ error }}
                             </p>
                         </div>
-                        <div class="col-12 col-md-6">
+                        <div class="col-12 col-md-6 my-3">
                             <label class="control-label" for="email">Email</label>
                             <input type="text" name="email" id="email" v-model="email" placeholder="email" class="form-control" :class="errors.email ? 'is-invalid' : ''">
                             <p v-for="(error, index) in errors.email" :key="index" class="text-danger">
                                 {{ error }}
                             </p>
                         </div>
-                        <div class="col-12 col-md-6">
+                        <div class="col-12 col-md-6 my-3">
                             <label class="control-label" for="name">Messaggio</label>
                             <textarea name="message" id="message" v-model="message" placeholder="Messagio" class="form-control" :class="errors.content ? 'is-invalid' : ''"></textarea>
                             <p v-for="(error, index) in errors.content" :key="index" class="text-danger">
                                 {{ error }}
                             </p>
                         </div>
-                        <div class="col-12 col-md-6 my-3">
+                        <div class="col-12  my-3">
                             <div v-if="loading" class="disabled" >
                                 <lord-icon
-                                    src="https://cdn.lordicon.com/gzmgulpl.json"
+                                    src="https://cdn.lordicon.com/sdhhsgeg.json"
                                     trigger="loop"
-                                    colors="primary:#121331,secondary:#4bb3fd,tertiary:#ebe6ef"
-                                    style="width:70px;height:70px ">
+                                    colors="primary:#4be1ec,secondary:#cb5eee"
+                                    style="width:80px;height:80px">
                                 </lord-icon>
                             </div>
                             <button v-else class="btn btn-sm btn-success" type="submit">Invia</button>
