@@ -49,7 +49,7 @@ export default {
 </script>
 <template>
     <div>
-        <h1 class="text-center">Contattaci</h1>
+        <h1 class="text-center my-5">Contattaci</h1>
         <div class="container">
             <div class="row">
                 <div class="col-12 card p-5">
