@@ -11,7 +11,8 @@ export default {
             message: '',
             success: false,
             errors: {},
-            loading: false
+            loading: false,
+            
         }
     },
     methods:{
@@ -48,9 +49,10 @@ export default {
 </script>
 <template>
     <div>
+        <h1 class="text-center">Contattaci</h1>
         <div class="container">
             <div class="row">
-                <div class="col-12">
+                <div class="col-12 card p-5">
                     <form @submit.prevent="sendForm()" class="row">
                         <div class="col-12 col-md-6">
                             <label class="control-label" for="name">Nome e cognome</label>
@@ -74,7 +76,15 @@ export default {
                             </p>
                         </div>
                         <div class="col-12 col-md-6 my-3">
-                            <button class="btn btn-sm btn-success" :disabled="loading" type="submit">{{ loading ? 'Invio email in corso' : 'Invia' }}</button>
+                            <div v-if="loading" class="disabled" >
+                                <lord-icon
+                                    src="https://cdn.lordicon.com/gzmgulpl.json"
+                                    trigger="loop"
+                                    colors="primary:#121331,secondary:#4bb3fd,tertiary:#ebe6ef"
+                                    style="width:70px;height:70px ">
+                                </lord-icon>
+                            </div>
+                            <button v-else class="btn btn-sm btn-success" type="submit">Invia</button>
                         </div>
                     </form>
                 </div>
@@ -84,4 +94,5 @@ export default {
 </template>
 <style lang="scss">
     @use '../styles/generals.scss' as *;
+
 </style>
