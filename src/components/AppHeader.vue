@@ -32,7 +32,10 @@ export default {
                     <nav class="navbar navbar-expand-lg bg-body-tertiary ">
                         <div class="container-fluid mx-5 my-2 image">
                             <img src="../assets/pet-logo.png" alt="pet-logo">
-                            <div class="collapse navbar-collapse mx-5" id="navbarNavDropdown">
+                            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                                <span class="navbar-toggler-icon"></span>
+                            </button>
+                            <div class="collapse navbar-collapse mx-5" id="navbarSupportedContent">
                                 <ul class="navbar-nav">
                                     <li class="nav-item" v-for="(item, index) in menuItems" :key="index">
                                         <router-link class="nav-link" :to="{ name: item.route_name }">
