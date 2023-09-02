@@ -63,15 +63,15 @@ export default {
                 <div class="col-12 card p-5">
                     <form @submit.prevent="sendForm()" class="row">
                         <div class="col-12 col-md-6 my-3">
-                            <label class="control-label" for="name">Nome e cognome</label>
-                            <input type="text" name="name" id="name" v-model="name" placeholder="Nome" class="form-control" :class="errors.name ? 'is-invalid' : ''">
+                            <label class="control-label" for="name">Nome e Cognome</label>
+                            <input type="text" name="name" id="name" v-model="name" placeholder="Nome e Cognome" class="form-control" :class="errors.name ? 'is-invalid' : ''">
                             <p v-for="(error, index) in errors.name" :key="index" class="text-danger">
                                 {{ error }}
                             </p>
                         </div>
                         <div class="col-12 col-md-6 my-3">
                             <label class="control-label" for="email">Email</label>
-                            <input type="text" name="email" id="email" v-model="email" placeholder="email" class="form-control" :class="errors.email ? 'is-invalid' : ''">
+                            <input type="text" name="email" id="email" v-model="email" placeholder="email@example.com" class="form-control" :class="errors.email ? 'is-invalid' : ''">
                             <p v-for="(error, index) in errors.email" :key="index" class="text-danger">
                                 {{ error }}
                             </p>
