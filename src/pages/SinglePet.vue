@@ -59,6 +59,18 @@ export default {
                 <div class="col-12 my-3">
                     <strong>Proprietario:</strong>{{ pet.owner }}
                 </div>
+                <div class="col-12 my-3">
+                    <strong>Vaccini:</strong>
+                    <div class="container" v-for="vaccination in pet.vaccinations">
+                        <span>{{ vaccination.vaccine_name }}</span>
+                    </div>
+                </div>
+                <div class="col-12 my-3">
+                    <strong>Malattie:</strong>
+                    <div class="container" v-for="illness in pet.illnesses">
+                        <span>{{ illness.name }}</span>
+                    </div>
+                </div>
                 <div class="col-12">
                     <strong>Note:</strong>{{ pet.notes }}
                 </div>
@@ -69,21 +81,23 @@ export default {
 
 <style lang="scss">
 @use '../styles/generals.scss' as *;
+
 .card-image-container {
-  position: relative;
-  overflow: hidden;
-  padding-top: 56.25%;
+    position: relative;
+    overflow: hidden;
+    padding-top: 56.25%;
 
 }
+
 .my-img {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: auto; 
-  max-width: 100%; 
-  height: auto; 
-  max-height: 100%; 
-  object-fit: contain; 
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: auto;
+    max-width: 100%;
+    height: auto;
+    max-height: 100%;
+    object-fit: contain;
 }
 </style>
