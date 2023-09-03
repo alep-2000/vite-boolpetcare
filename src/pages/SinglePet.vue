@@ -21,7 +21,7 @@ export default {
     methods: {
         getSinglePet() {
             this.store.loading = true;
-            axios.get(`${this.store.baseUrl}/api/pets/${this.$route.params.id}`).then((response) => {
+            axios.get(`${this.store.baseUrl}/api/pets/${this.$route.params.slug}`).then((response) => {
                 if (response.data.success) {
                     this.pet = response.data.pet;
                     this.store.loading = false;
@@ -39,12 +39,14 @@ export default {
     <div>
         <AppLoading v-if="this.store.loading" />
         <div class="container" v-else>
-            <div class="row">
+            <div class="row my-3">
+                <div class="card-image-container d-flex justify-content-center w-100">
+                    <img :src="`${this.store.baseUrl}/storage/${pet.image}`" class="card-img-top my-img" v-if="pet.image">
+                    <img src="https://picsum.photos/200/300" class="card-img-top my-img" v-else>
+                </div>
                 <div class="col-12 text-center mb-4">
                     <h1><strong>Nome:</strong> {{ pet.name }}</h1>
                 </div>
-            </div>
-            <div class="row">
                 <div class="col-12">
                     <strong>Specie:</strong>{{ pet.species }}
                 </div>
@@ -65,6 +67,23 @@ export default {
     </div>
 </template>
 
-<style lang="">
-    
+<style lang="scss">
+@use '../styles/generals.scss' as *;
+.card-image-container {
+  position: relative;
+  overflow: hidden;
+  padding-top: 56.25%;
+
+}
+.my-img {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: auto; 
+  max-width: 100%; 
+  height: auto; 
+  max-height: 100%; 
+  object-fit: contain; 
+}
 </style>

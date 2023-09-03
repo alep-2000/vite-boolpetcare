@@ -6,32 +6,32 @@ export default {
       slides: [
         {
           image: 'https://www.my-personaltrainer.it/2021/04/13/vaccinazione-cane-orig.jpeg',
-          title: 'Marvel\'s Spiderman Miles Morale',
-          text: 'Experience the rise of Miles Morales as the new hero masters incredible, explosive new powers to become his own Spider-Man.',
+          title: 'Cane vaccinato',
+          text: 'Questo cane è stato vaccinato e gode di ottima salute.',
           selected: true
         },
         {
           image: 'https://doctorvet.it/wp-content/uploads/2019/10/vaccinazione-cane.jpg',
-          title: 'Ratchet & Clank: Rift Apart',
-          text: 'Go dimension-hopping with Ratchet and Clank as they take on an evil emperor from another reality.',
+          title: 'Cane vaccinato',
+          text: 'Questo cane è stato vaccinato e protegge la sua salute.',
           selected: false
         },
         {
           image: 'https://www.my-personaltrainer.it/2021/04/13/vaccino-gatto-orig.jpeg',
-          title: 'Fortnite',
-          text: "Grab all of your friends and drop into Epic Games Fortnite, a massive 100 - player face - off that combines looting, crafting, shootouts and chaos.",
+          title: 'Gatto vaccianto',
+          text: "Questo gatto è stato vaccinato e sta bene.",
           selected: false
         },
         {
           image: 'https://www.cani.it/img/330ccd33d85824a3c04b3d9e3c620281/w/755/289.jpg',
-          title: 'Stray',
-          text: 'Lost, injured and alone, a stray cat must untangle an ancient mystery to escape a long-forgotten city',
+          title: 'Cane vaccinato',
+          text: 'Questo cane è stato vaccinato e ora è al sicuro.',
           selected: false
         },
         {
           image: 'https://www.starbene.it/content/uploads/2023/07/pappagallo.jpg',
-          title: "Marvel's Avengers",
-          text: 'Marvel\'s Avengers is an epic, third-person, action-adventure game that combines an original, cinematic story with single-player and co-operative gameplay.',
+          title: "Pappagallo vaccinato",
+          text: 'Questo pappagallo è stato vaccinato e vola alto.',
           selected: false
         }
       ],
@@ -70,49 +70,10 @@ export default {
 }
 </script>
 <template>
-  <AppLoading v-if="this.store.loading" />
-  <div v-else>
-    <div class="container">
-      <div class="row">
-        <div class="col-12">
-          <h1 class="text-center my-5">BOOLPET</h1>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-12 col-md-4" v-for="pet in pets" :key="pet.id">
-          <div class="card-body">
-            <h5 class="card-title">{{ pet.name }}</h5>
-            <h5 class="card-title">{{ pet.owner }}</h5>
-            <p class="card-text">{{ turncateText(pet.notes) }}</p>
-            <p class="card-text"><small class="text-muted">{{ pet.date_born }}</small></p>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="row">
-      <div class="col-12">
-        <div class="d-flex justify-content-center">
-          <nav>
-            <ul class="pagination">
-              <li :class="currentPage === 1 ? 'disabled' : ''">
-                <button class="page-link" @click="getPets(currentPage - 1)">Precedente</button>
-              </li>
-              <li :class="currentPage === lastPage ? 'disabled' : ''">
-                <button class="page-link" @click="getPets(currentPage + 1)">Successivo</button>
-              </li>
-            </ul>
-          </nav>
-        </div>
-        <div class="text-center mt-3">
-          Pagina {{ currentPage }} di {{ lastPage }}
-        </div>
-      </div>
-    </div>
-  </div>
-  <div class="container">
+  <div class="slider-container">
     <div class="slider-wrapper" @mouseover="stopAutoScroll" @mouseleave="startAutoScroll">
 
-      <div class="item">
+      <div class="item w-100">
         <img :src="slides[movimento].image">
         <div class="overlay">
           <h2>{{ slides[movimento].title }}</h2>
@@ -120,7 +81,7 @@ export default {
         </div>
       </div>
 
-      <div class="thumbs">
+      <div class="thumbs w-100">
         <div class="prev" @click="prevSlide"></div>
         <div class="next" @click="nextSlide"></div>
         <img :src="slide.image" v-for="(slide, index) in slides" :key="index" class="thumb"
@@ -138,54 +99,59 @@ export default {
   box-sizing: border-box;
 }
 
-.container {
-  height: 100vh;
+.slider-container {
+  min-height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
+  background-color: #f0f0f0;
 }
 
+.slider-wrapper {
+  width: 100%;
+  max-width: 1200px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+
 .item {
-  float: left;
-  width: 700px;
-  height: 300px;
+  width: 100%;
+  height: auto;
   position: relative;
 }
 
 .item img {
   width: 100%;
-  height: 100%;
+  max-height: 500px;
   object-fit: cover;
-}
-
-.item .text {
-  position: absolute;
-  right: 20px;
-  bottom: 20px;
-  text-align: right;
-  color: white;
 }
 
 .thumbs {
   display: flex;
-  flex-direction: column;
   align-items: center;
-  height: 300px;
+  height: auto;
   background: #000;
   position: relative;
 }
 
+
 .thumb {
-  height: calc(300px / 5);
-  width: 100%;
+  flex: 1;
+  max-width: 20%;
   opacity: 0.5;
   object-fit: cover;
   cursor: pointer;
 }
 
+
 .thumb img {
   width: 100%;
-  height: 100%;
+  height: auto;
   object-fit: cover;
 }
 
@@ -194,61 +160,39 @@ export default {
   opacity: 1;
 }
 
-.prev,
-.next {
-  width: 20px;
-  height: 20px;
-  margin: 10px 0;
-  border-radius: 50%;
-  background: #ccc;
-  position: absolute;
-  left: 50%;
-  transform: translate(-50%);
-  cursor: pointer;
-  z-index: 999;
-}
-
-.next {
-  bottom: 0;
-}
-
-/*
-EXTRA: in questo esempio gli accordion vengono creati
-usando 2 bordi di un quadratino ruotato di 45 gradi
-In una versione base si possono usare delle icone
-oppure i caratteri ∧ (&and;) e ∨ (&or;)
- */
-.prev::after {
-  content: '';
-  width: 10px;
-  height: 10px;
-  border-top: 1px solid black;
-  border-right: 1px solid black;
-  display: block;
-  position: absolute;
-  top: 35%;
-  left: 50%;
-  transform: translate(-50%) rotate(-45deg);
-}
-
-.next::before {
-  content: '';
-  width: 10px;
-  height: 10px;
-  border-top: 1px solid black;
-  border-right: 1px solid black;
-  display: block;
-  position: absolute;
-  bottom: 35%;
-  left: 50%;
-  transform: translate(-50%) rotate(135deg);
-}
-
 .overlay {
   position: absolute;
   bottom: 0;
-  color: white;
+  color: black;
   padding: 20px;
-  text-align: right;
+  text-align: left;
+}
+
+.slider-title {
+  font-size: 2rem;
+}
+
+.slider-text {
+  font-size: 1.5rem;
+}
+
+@media screen and (max-width: 768px) {
+
+  .thumbs {
+    flex-direction: row;
+    justify-content: center;
+  }
+
+  .thumb {
+    max-width: 20%;
+  }
+
+  .slider-title {
+    font-size: 1.5rem;
+  }
+
+  .slider-text {
+    font-size: 1rem;
+  }
 }
 </style>

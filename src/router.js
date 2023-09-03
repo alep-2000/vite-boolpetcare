@@ -5,6 +5,7 @@ import AskUs from './pages/AskUs.vue';
 import NotFound from './pages/NotFound.vue';
 import PetsList from './pages/PetsList.vue';
 import PetSingle from './pages/SinglePet.vue';
+import ThankYouPage from './pages/ThankYou.vue';
 
 const router = createRouter({
     history: createWebHistory(),
@@ -20,7 +21,7 @@ const router = createRouter({
             component: PetsList
         },
         {
-            path: '/single-pet/:id',
+            path: '/single-pet/:slug',
             name: 'single-pet',
             component: PetSingle
         },
@@ -33,6 +34,11 @@ const router = createRouter({
             path: '/ask-us',
             name: 'ask_us',
             component: AskUs
+        },
+        {
+            path: '/thank-you',
+            name: 'thank-you',
+            component: ThankYouPage 
         },
         {
             path: '/pagina-non-trovata',

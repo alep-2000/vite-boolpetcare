@@ -28,6 +28,11 @@ export default {
           this.currentPage = response.data.results.current_page;
           this.lastPage = response.data.results.last_page;
           this.store.loading = false;
+
+          window.scrollTo({
+            top: 0, 
+            block: 'start',
+          });
         }
       });
     },
@@ -41,45 +46,52 @@ export default {
 }
 </script>
 <template>
-  <AppLoading v-if="this.store.loading" />
-  <div v-else>
-    <div class="container">
-      <div class="row">
+  <div ref="pageContainer" class="container">
+
+    <AppLoading v-if="this.store.loading" />
+    <div v-else>
+      <div class="container">
+        <div class="row">
+          <div class="col-12">
+            <h1 class="text-center my-5">BOOLPET</h1>
+          </div>
+        
+          <div class="col-12 col-md-4 card p-3 my-3" v-for="pet in pets" :key="pet.id">
+              <div class="card-image-container">
+                <img :src="`${this.store.baseUrl}/storage/${pet.image}`" class="card-img-top my-img" v-if="pet.image">
+                <img src="https://picsum.photos/200/300" class="card-img-top my-img" v-else>
+              </div>
+              <div class="card-body">
+                <h5 class="card-title">{{ pet.name }}</h5>
+                <h5 class="card-title my-4">{{ pet.owner }}</h5>
+                <p class="card-text">{{ turncateText(pet.notes) }}</p>
+                <p class="card-text"><small class="text-muted">{{ pet.date_born }}</small></p>
+              </div>
+              <div class="card-footer my-3">
+                <router-link class="btn btn-outline-primary w-100" :to="{ name: 'single-pet', params: { slug: pet.slug } }">Vedi
+                  l'animale</router-link>
+              </div>
+            </div>
+          
+        </div>
+      </div>
+      <div class="row my-5">
         <div class="col-12">
-          <h1 class="text-center my-5">BOOLPET</h1>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-12 col-md-4" v-for="pet in pets" :key="pet.id">
-          <div class="card-body">
-            <h5 class="card-title">{{ pet.name }}</h5>
-            <h5 class="card-title my-4">{{ pet.owner }}</h5>
-            <p class="card-text">{{ turncateText(pet.notes) }}</p>
-            <p class="card-text"><small class="text-muted">{{ pet.date_born }}</small></p>
+          <div class="d-flex justify-content-center">
+            <nav>
+              <ul class="pagination">
+                <li :class="currentPage === 1 ? 'disabled' : ''">
+                  <button class="page-link" @click="getPets(currentPage - 1)">Precedente</button>
+                </li>
+                <li :class="currentPage === lastPage ? 'disabled' : ''">
+                  <button class="page-link" @click="getPets(currentPage + 1)">Successivo</button>
+                </li>
+              </ul>
+            </nav>
           </div>
-          <div class="card-footer my-3">
-            <router-link class="btn btn-outline-primary w-100" :to="{ name: 'single-pet', params: { id: pet.id } }">Vedi
-              l'animale</router-link>
+          <div class="text-center mt-3">
+            Pagina {{ currentPage }} di {{ lastPage }}
           </div>
-        </div>
-      </div>
-    </div>
-    <div class="row mt-5">
-      <div class="col-12">
-        <div class="d-flex justify-content-center">
-          <nav>
-            <ul class="pagination">
-              <li :class="currentPage === 1 ? 'disabled' : ''">
-                <button class="page-link" @click="getPets(currentPage - 1)">Precedente</button>
-              </li>
-              <li :class="currentPage === lastPage ? 'disabled' : ''">
-                <button class="page-link" @click="getPets(currentPage + 1)">Successivo</button>
-              </li>
-            </ul>
-          </nav>
-        </div>
-        <div class="text-center mt-3">
-          Pagina {{ currentPage }} di {{ lastPage }}
         </div>
       </div>
     </div>
