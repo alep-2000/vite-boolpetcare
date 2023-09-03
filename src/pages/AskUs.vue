@@ -48,7 +48,6 @@ export default {
                     <input type="email" class="form-control" placeholder="name@example.com">
                 </div>
                 <div class="class-group my-3">
-                    >>>>>>> 87d5add56ef90c0026dc063f9add1da20872bff9
                     <label class="control-label">Domanda</label>
                     <textarea class="form-control" rows="3"></textarea>
                 </div>

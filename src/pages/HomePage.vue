@@ -1,10 +1,6 @@
 <script>
-import axios from 'axios';
-import AppLoading from '../components/AppLoading.vue';
 export default {
-  components: {
-    AppLoading,
-  },
+  name: 'HomePage',
   data() {
     return {
       slides: [
