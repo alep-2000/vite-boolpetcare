@@ -56,7 +56,8 @@ export default {
             <h1 class="text-center my-5">BOOLPET</h1>
           </div>
         
-          <div class="col-12 col-md-4 card p-3 my-3" v-for="pet in pets" :key="pet.id">
+          <div class="col-12 col-md-4" v-for="pet in pets" :key="pet.id">
+            <div class="card p-3 m-3">
               <div class="card-image-container">
                 <img :src="`${this.store.baseUrl}/storage/${pet.image}`" class="card-img-top my-img" :alt="'Immagine non disponibile'">
               </div>
@@ -71,6 +72,7 @@ export default {
                   l'animale</router-link>
               </div>
             </div>
+          </div>
           
         </div>
       </div>
