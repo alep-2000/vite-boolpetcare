@@ -58,8 +58,7 @@ export default {
         
           <div class="col-12 col-md-4 card p-3 my-3" v-for="pet in pets" :key="pet.id">
               <div class="card-image-container">
-                <img :src="`${this.store.baseUrl}/storage/${pet.image}`" class="card-img-top my-img" v-if="pet.image">
-                <img src="https://picsum.photos/200/300" class="card-img-top my-img" v-else>
+                <img :src="`${this.store.baseUrl}/storage/${pet.image}`" class="card-img-top my-img" :alt="'Immagine non disponibile'">
               </div>
               <div class="card-body">
                 <h5 class="card-title">{{ pet.name }}</h5>

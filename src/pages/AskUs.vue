@@ -30,6 +30,7 @@ export default {
 
             axios.post(`${this.store.baseUrl}/api/contacts/`, data).then((response) => {
                 this.success = response.data.success;
+                console.log(this.success)
                 if (!this.success) {
                     this.errors = response.data.errors;
                 }
