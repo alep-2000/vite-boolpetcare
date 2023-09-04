@@ -57,7 +57,7 @@ export default {
                 </lord-icon>
             </div>
             <div class="row">
-                <div class="col-12 card p-5">
+                <div class="col-12 card p-5 my-3">
                     <form @submit.prevent="sendForm()" class="row">
                         <div class="col-12 col-md-6 my-3">
                             <label class="control-label" for="name">Nome e Cognome</label>

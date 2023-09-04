@@ -22,7 +22,7 @@ export default {
                 </div>
             </div>
             <div class="mt-5">
-                <router-link class="btn btn-primary" :to="{name: 'ask_us' }">Inviaci le tue domande </router-link>
+                <router-link class="btn btn-primary mb-4" :to="{name: 'ask_us' }">Inviaci le tue domande </router-link>
             </div>
         </div>      
     </div>
