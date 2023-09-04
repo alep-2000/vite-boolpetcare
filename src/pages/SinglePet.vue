@@ -41,8 +41,7 @@ export default {
         <div class="container" v-else>
             <div class="row my-3">
                 <div class="card-image-container d-flex justify-content-center w-100">
-                    <img :src="`${this.store.baseUrl}/storage/${pet.image}`" class="card-img-top my-img" v-if="pet.image">
-                    <img src="https://picsum.photos/200/300" class="card-img-top my-img" v-else>
+                    <img :src="`${this.store.baseUrl}/storage/${pet.image}`" class="card-img-top my-img" :alt="'Immagine non disponibile'">
                 </div>
                 <div class="col-12 text-center mb-4">
                     <h1><strong>Nome:</strong> {{ pet.name }}</h1>
